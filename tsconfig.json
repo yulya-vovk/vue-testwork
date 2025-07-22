@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["vite-plugin-vue", "jest", "node", "vite/client"],
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "target": "ES2020",
+    "strict": true
+  },
+  "include": ["src/**/*"],
+  "files": [],
+    "references": [
+    {"path": "./tsconfig.node.json"},
+    {"path": "./tsconfig.app.json"}
+  ],
+}
