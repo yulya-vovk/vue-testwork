@@ -23,11 +23,69 @@ export const useUserStore = defineStore('user', {
         {id: 2, name: "LDAP"},
     ], 
     users: [
-      { id: 1, labels: [{text: 'XXXX'}], labelInput: 'XXXX', type: 1, login: 'Значение', password: '123' },
-      { id: 2, labels: [{text: 'yyyy'}, {text: 'fgrgeg'},], labelInput: 'yyyy', type: 1, login: 'Значение', password: 'pass' },
-      { id: 3, labels: [{text: 'XXXX'}], labelInput: 'XXXX', type: 1, login: 'Значение', password: 'pass' },
-      { id: 4, labels: [{text: 'Значение1'}, {text: 'Значение2'}, {text: 'Значение3'}], labelInput: 'Значение1', type: 2, login: 'Значение', password: '' },
-      { id: 5, labels: [{text: 'Значение17'}], labelInput: 'Значение1', type: 2, login: 'Значение', password: '' },
+      { 
+        id: 1, 
+        labels: [
+          {text: 'XXXX'}
+        ], 
+        labelInput: 'XXXX', 
+        type: 1, 
+        login: 'Значение', 
+        password: '123',
+        isValid: true,  
+        showPassword: false 
+      },
+      { 
+        id: 2, 
+        labels: [
+          {text: 'yyyy'}, 
+          {text: 'fgrgeg'},
+        ], 
+          labelInput: 'yyyy;fgrgeg', 
+          type: 1, 
+          login: 'Значение', 
+          password: 'pass',
+          isValid: true,  
+          showPassword: false 
+        },
+      { 
+        id: 3, 
+        labels: [
+          {text: 'XXXX'}
+        ], 
+        labelInput: 'XXXX', 
+        type: 1, 
+        login: 'Значение', 
+        password: 'pass',
+        isValid: true,  
+        showPassword: false 
+      },
+      { 
+        id: 4, 
+        labels: [
+          {text: 'Значение1'}, 
+          {text: 'Значение2'}, 
+          {text: 'Значение3'}
+        ], 
+        labelInput: 'Значение1;Значение2;Значение3', 
+        type: 2, 
+        login: 'Значение', 
+        password: '',
+        isValid: true,  
+        showPassword: false 
+      },
+      { 
+        id: 5, 
+        labels: [
+          {text: 'Значение17'}
+        ], 
+        labelInput: 'Значение1', 
+        type: 2, 
+        login: 'Значение', 
+        password: '',
+        isValid: true,  
+        showPassword: false 
+      },
     ] as User[],
   }),
   actions: {

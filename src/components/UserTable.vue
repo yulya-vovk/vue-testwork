@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>Учетные записи</h1>
-    <button class="add-new-user-btn" @click="addNewUser">＋</button>
+    <button class="add-new-user-btn" @click="addNewUser" aria-label="Добавить учетную запись">＋</button>
   </header>
   <div class="center-v info-line">  
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,7 +13,7 @@
   </div>
 
   <div class="wrapper">
-    <div class="row-wrapper">
+    <div class="row-wrapper users-table">
       <div class="labels-row">
         <div class="label">Метки</div>
         <div class="label">Тип записи</div>
@@ -66,22 +66,27 @@
                 maxlength="100"
                 required 
             />
-            <button @click="togglePassword(user)" type="button" class="toggle-password-btn btn-min">
+            <button 
+              @click="togglePassword(user)" 
+              type="button" 
+              class="toggle-password-btn btn-min"
+              :aria-label="user.showPassword ? 'Скрыть пароль' : 'Показать пароль'"
+            >
               <eye-icon v-if="user.showPassword" />
               <eye-off-icon v-else />
             </button>
           </div>
         </div>
-        <button @click="removeUser(user.id)" class="delete-btn btn-min">
+        <button @click="removeUser(user.id)" class="delete-btn btn-min" aria-label="Удалить запись">
           <trash-icon />
         </button>
       </div>
     </div>
 
-  <div v-if="openMenu" class="row-wrapper">
+  <div v-if="openMenu" class="row-wrapper new-user-form">
     <h3>Добавить учетную запись</h3>
       <form @submit.prevent="submitNewUser">
-        <div class="user-row">
+        <div class="new-user-row">
           <div class="input">
             <input 
                 v-model="newUser.labelInput"
@@ -120,13 +125,18 @@
                   maxlength="100"
                   required 
               />
-              <button @click="togglePassword(newUser)" type="button" class="toggle-password-btn btn-min">
+              <button 
+                @click="togglePassword(newUser)" 
+                type="button" 
+                class="toggle-password-btn btn-min"
+                :aria-label="newUser.showPassword ? 'Скрыть пароль' : 'Показать пароль'"
+              >
                 <eye-icon v-if="newUser.showPassword" />
                 <eye-off-icon v-else />
               </button>
             </div>
           </div>
-          <button type="submit" class="submit-btn btn-min" @click="submitNewUser">
+          <button type="submit" class="submit-btn btn-min" name="Добавить" @click="submitNewUser">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" fill="none" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12A2.25 2.25 0 0 0 20.25 18V7.5L16.5 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25zm9.75-16.5v5h-9.5v-5zM13 5.5V7m-6.75 4.25h11.5v6.5H6.25Z"></path>
             </svg>
@@ -160,12 +170,11 @@ const openMenu = ref(false);
 
 const newUser = ref<Partial<UserRecord>>({
   labelInput: '',
-  type: 1,
+  type: 0,
   login: '',
   password: null,
   isValid: true,
   showPassword: false
-  
 });
 
 const addNewUser = () => {
@@ -195,9 +204,6 @@ const validateUser = (user: UserRecord) => {
 
   user.isValid = isLoginValid && isPasswordValid;
 
-  if (user.isValid) {
-    handleLabelBlur(user); 
-  }
 };
 
 const togglePassword = (user: UserRecord) => {
@@ -236,6 +242,7 @@ const submitNewUser = () => {
   const userToAdd = {
     id,
     labels,
+    labelInput: newUser.value.labelInput,
     type: newUser.value.type || 0,
     login: newUser.value.login,
     password: newUser.value.password,
@@ -247,10 +254,11 @@ const submitNewUser = () => {
 
   newUser.value = {
     labelInput: '',
-    type: 1,
+    type: 0,
     login: '',
     password: '',
-    isValid: true
+    isValid: true,
+    showPassword: false
   };
 };
 
@@ -341,7 +349,7 @@ svg {
   align-items: center;
 }
 
-.user-row, .labels-row {
+.user-row, .labels-row, .new-user-row {
   display: flex;
   align-items: center;
   gap: 8px;
