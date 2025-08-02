@@ -19,6 +19,20 @@ export default defineConfig({
     ],
     testTransformMode: {
       web: ['*.tsx', '*.ts'] 
-    }
-  }
+    },
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov'],
+      reportsDirectory: './coverage',
+      exclude: [
+        'node_modules/',
+        'test/',
+        'dist/',
+        '.eslintrc.cjs',
+        'vite.config.ts',
+        'vitest.config.ts'
+      ]
+    },
+  },
+
 })

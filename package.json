@@ -13,7 +13,8 @@
     "test:ui": "vitest --ui",
     "test:e2e": "cypress open",
     "test:e2e:headless": "cypress run",
-    "test:component": "cypress open --component"
+    "test:component": "cypress open --component",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
@@ -32,6 +33,7 @@
     "@types/node": "^22.15.32",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vitejs/plugin-vue-jsx": "^5.0.0",
+    "@vitest/coverage-v8": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "cypress": "^14.5.2",
