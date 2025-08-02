@@ -25,17 +25,17 @@
 ```bash
 npm install
 
-**### 2. Запусти dev-сервер**
+### 2. Запусти dev-сервер
 npm run dev
 
-**##  Запуск тестов**
+##  Запуск тестов
 ### Unit-тесты (Vitest)
 npm run test
 
-**### Просмотр покрытия кода (code coverage)**
+### Просмотр покрытия кода (code coverage)
 npm run test:coverage
 
-**## E2E-тесты (Cypress)**
+## E2E-тесты (Cypress)
 # Запусти dev-сервер в одном терминале
 npm run dev
 
