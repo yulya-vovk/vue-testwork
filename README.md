@@ -1,33 +1,43 @@
-# test-vue
+# Vue 3 + Pinia + Vite 
 
-This template should help get you started developing with Vue 3 in Vite.
+Этот проект создан для демонстрации навыков работы с **Vue 3**, **Pinia**, **Vite**, **TypeScript** и **автоматизированными тестами**.
 
-## Recommended IDE Setup
+   Используемые технологии:
+- **Vue 3** (Composition API)
+- **Pinia** — управление состоянием
+- **Vite** — сборка
+- **TypeScript** — типизация
+- **Vitest** — unit-тесты
+- **Cypress** — E2E-тесты
+- **@testing-library/vue** — тестирование компонентов
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+   Проект представляет собой **таблицу учётных записей** с возможностью:
+- Добавления, редактирования и удаления записей
+- Управления метками (через `;`)
+- Переключения видимости пароля
+- Валидации форм
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Запуск проекта
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+### 1. Установи зависимости
+```bash
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### 2. Запусти dev-сервер
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+##  Запуск тестов
+### Unit-тесты (Vitest)
+npm run test
 
-```sh
-npm run build
-```
+### Просмотр покрытия кода (code coverage)
+npm run test:coverage
+
+## E2E-тесты (Cypress)
+# Запусти dev-сервер в одном терминале
+npm run dev
+
+# Затем запусти Cypress
+npm run test:e2e
