@@ -51,4 +51,4 @@ npm run dev
 
 ## 📸 Скриншот
 
-![UserTable Interface](docs/angular-cli-testwork.png)
+![UserTable Interface](docs/screenshot.png)
