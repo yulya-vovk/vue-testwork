@@ -1,4 +1,11 @@
 # Vue 3 + Pinia + Vite 
+> **SPA на Vue 3 с Pinia, TypeScript и полным набором тестов: unit, E2E (Cypress), a11y. Демонстрирует навыки full-stack frontend-разработки.**
+
+[![Vue](https://img.shields.io/badge/Vue-3-green?logo=vue.js)](https://vuejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4285F4?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vitest](https://img.shields.io/badge/Test-Vitest-35495E?logo=jest)](https://vitest.dev)
+[![Cypress](https://img.shields.io/badge/E2E-Cypress-F16529?logo=cypress)](https://www.cypress.io)
+[![Pinia](https://img.shields.io/badge/Pinia-FF4949?logo=pinia)](https://pinia.vuejs.org)
 
 Этот проект создан для демонстрации навыков работы с **Vue 3**, **Pinia**, **Vite**, **TypeScript** и **автоматизированными тестами**.
 
@@ -19,25 +26,29 @@
 
 ---
 
-## Запуск проекта
+## Запуск проекта локально
 
-### 1. Установи зависимости
-```bash
+## 🚀 Как запустить локально
+
+git clone https://github.com/yulya-vovk/vue-testwork.git
+cd vue-testwork
 npm install
-
-### 2. Запусти dev-сервер
 npm run dev
 
-##  Запуск тестов
-### Unit-тесты (Vitest)
-npm run test
+**Dev-сервер:** http://localhost:5173
+**Тесты:** npm run test
+**E2E:** npm run test:e2e
 
-### Просмотр покрытия кода (code coverage)
-npm run test:coverage
+## 🎯 Что тестируется?
 
-## E2E-тесты (Cypress)
-# Запусти dev-сервер в одном терминале
-npm run dev
+- ✅ **Рендеринг компонента** — заголовок, таблица, кнопки
+- ✅ **Добавление новой учётной записи** — форма, валидация, отправка
+- ✅ **Удаление записи** — клик, обновление состояния
+- ✅ **Переключение видимости пароля** — `showPassword`, иконки глаза
+- ✅ **Обработка меток** — разделитель `;`, обновление `labels`
+- ✅ **Валидация форм** — обязательные поля, состояние `isValid`
+- ✅ **Доступность (a11y)** — `aria-label`, семантические атрибуты
 
-# Затем запусти Cypress
-npm run test:e2e
+## 📸 Скриншот
+
+![UserTable Interface](docs/angular-cli-testwork.png)
